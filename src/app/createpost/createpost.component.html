@@ -1,0 +1,33 @@
+<div>
+  <form [formGroup]="createpostdata" (ngSubmit)="createPost(createpostdata.value)">
+
+    <input type="text" class="form-control" name="postid" placeholder="postid"
+           formControlName="postid">
+    <br/>
+    <br/>
+
+    <input type="text" class="form-control" name="text" placeholder="text"
+           formControlName="text">
+
+    <br/>
+    <br/>
+
+    <select class="form-control" name="account" formControlName="account">
+      <option *ngFor="let i of accounts" [value]="i">{{i}}</option>
+    </select>
+
+    <br/>
+    <br/>
+
+    <select class="form-control" name="status" formControlName="status">
+      <option *ngFor="let i of status" [value]="i">{{i}}</option>
+    </select>
+
+    <br />
+    <br />
+
+
+    <input type="submit" [disabled]="!createpostdata.valid" class="forsubmit"
+           value="Log In">
+  </form>
+</div>

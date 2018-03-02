@@ -1,0 +1,12 @@
+<div>
+  <form [formGroup]="editdataresponse" (ngSubmit)="updatePost(editdataresponse.value)">
+
+    <input type="text" class="form-control" name="postid" placeholder="postid"
+           formControlName="postid">
+    <br/>
+    <br/>
+
+    <input type="submit" [disabled]="!editdataresponse.valid" class="forsubmit"
+           value="Log In">
+  </form>
+</div>

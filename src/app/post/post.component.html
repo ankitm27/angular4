@@ -1,0 +1,30 @@
+<!--<div>-->
+  <!--<form [formGroup] = "formdata" (ngSubmit) = "postIdFormFunction(formdata.value)" >-->
+    <!--<input type = "text" class = "fortextbox" name = "postid" placeholder = "postid"-->
+           <!--formControlName = "postid">-->
+    <!--<br/>-->
+    <!--<input type = "submit" [disabled] = "!formdata.valid" class = "forsubmit"-->
+           <!--value = "Log In">-->
+  <!--</form>-->
+<!--</div>-->
+
+
+<div>
+<span *ngIf = "isDataAvailable">
+  <span *ngIf="isSuccess;else condition1">
+  <p *ngFor="let i of postResponse">{{i.postId}}</p>
+  </span>
+  <ng-template #condition1>{{errorMessage}}</ng-template>
+  </span>
+</div>
+
+
+
+<a routerLink = "">home</a>
+
+<a routerLink = "new">new</a>
+<a routerLink = "edit">edit</a>
+
+<router-outlet></router-outlet>
+
+
